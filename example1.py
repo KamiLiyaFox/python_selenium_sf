@@ -1,13 +1,15 @@
+from selenium import webdriver
+import time
+import sys
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 from time import sleep
-
-driver = webdriver.Chrome("E:\GIT\Projects\Skillfactory\python_selenium_sf/chromedriver")
-driver.get("https://google.com")
-driver.find_element(By.XPATH, "//input[placeholder =\"search\"]").send_keys('Skillfactory' + Keys.RETURN)
-sleep(2)
-driver.save_screenshot('sf.png')
-driver.quit()
+_start = time.time()
+br = webdriver.Chrome("E:\GIT\Projects\Skillfactory\python_selenium_sf/chromedriver")
+br.get("https://google.com")
+br.save_screenshot("screenshot-phantom.png")
+br.quit()
+_end = time.time()
